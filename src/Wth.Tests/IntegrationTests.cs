@@ -13,34 +13,33 @@ namespace Wth.Tests
         [Fact]
         public async Task NewBrand()
         {
-            using (var resolver = EventFlowOptions.New
+            using var resolver = EventFlowOptions.New
                 .AddEvents(new[] { typeof(BrandRegistered) })
                 .AddCommands(new[] { typeof(RegisterNewBrand) })
                 .AddCommandHandlers(typeof(RegisterNewBrandHandler))
                 .UseInMemoryReadStoreFor<BrandList>()
-                .CreateResolver())
-            {
-                var exampleId = BrandId.New;
+                .CreateResolver();
 
-                const int magicNumber = 42;
+            var exampleId = BrandId.New;
 
-                var commandBus = resolver.Resolve<ICommandBus>();
-                var executionResult = await commandBus.PublishAsync(
+            const int magicNumber = 42;
+
+            var commandBus = resolver.Resolve<ICommandBus>();
+            var executionResult = await commandBus.PublishAsync(
                     new RegisterNewBrand(exampleId, magicNumber),
                     CancellationToken.None)
-                    .ConfigureAwait(false);
+                .ConfigureAwait(false);
 
-                executionResult.IsSuccess.Should().BeTrue();
+            executionResult.IsSuccess.Should().BeTrue();
 
-                var queryProcessor = resolver.Resolve<IQueryProcessor>();
-                var exampleReadModel = await queryProcessor.ProcessAsync(
+            var queryProcessor = resolver.Resolve<IQueryProcessor>();
+            var exampleReadModel = await queryProcessor.ProcessAsync(
                     new ReadModelByIdQuery<BrandList>(exampleId),
                     CancellationToken.None)
-                    .ConfigureAwait(false);
+                .ConfigureAwait(false);
 
-                exampleReadModel.Brands.Count.Should().Be(1);
-                exampleReadModel.Brands[0].MagicNumber.Should().Be(42);
-            }
+            exampleReadModel.Brands.Count.Should().Be(1);
+            exampleReadModel.Brands[0].MagicNumber.Should().Be(42);
         }
 
         [Fact]

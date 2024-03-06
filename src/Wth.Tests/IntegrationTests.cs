@@ -1,9 +1,9 @@
 using EventFlow;
-using EventFlow.Extensions;
 using EventFlow.Queries;
 using FluentAssertions;
 using Wth.Application.Brands.Commands;
 using Wth.Domain.Brands;
+using Wth.Presentation;
 using Wth.ReadModel;
 
 namespace Wth.Tests
@@ -13,12 +13,7 @@ namespace Wth.Tests
         [Fact]
         public async Task NewBrand()
         {
-            using var resolver = EventFlowOptions.New
-                .AddEvents(new[] { typeof(BrandRegistered) })
-                .AddCommands(new[] { typeof(RegisterNewBrand) })
-                .AddCommandHandlers(typeof(RegisterNewBrandHandler))
-                .UseInMemoryReadStoreFor<BrandList>()
-                .CreateResolver();
+            using var resolver = ApplicationResolver.Resolver;
 
             var exampleId = BrandId.New;
 
@@ -34,7 +29,7 @@ namespace Wth.Tests
 
             var queryProcessor = resolver.Resolve<IQueryProcessor>();
             var exampleReadModel = await queryProcessor.ProcessAsync(
-                    new ReadModelByIdQuery<BrandList>(exampleId),
+                    new ReadModelByIdQuery<BrandListReadModel>(exampleId),
                     CancellationToken.None)
                 .ConfigureAwait(false);
 
@@ -62,7 +57,7 @@ namespace Wth.Tests
         }
 
         [Fact]
-        public void ScheaduleFairDate()
+        public void ScheduleFairDate()
         {
 
         }

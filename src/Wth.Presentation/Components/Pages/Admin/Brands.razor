@@ -1,0 +1,43 @@
+﻿@using System.Net.Http.Json
+@using EventFlow.Queries
+@using Wth.Domain.Brands
+@using Wth.ReadModel
+@inject HttpClient httpClient
+
+<h3>Brands</h3>
+
+<MudGrid>
+    <MudItem xs="6">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">xs=6</MudPaper>
+    </MudItem>
+    <MudItem xs="6">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">xs=6</MudPaper>
+    </MudItem>
+    <MudItem xs="12">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">xs=12</MudPaper>
+    </MudItem>
+</MudGrid>
+
+
+@* <MudDataGrid Items="@Elements.Take(4)">
+    <Columns>
+        <PropertyColumn Property="x => x.Id" Title="Id"/>
+        <PropertyColumn Property="x => x.MagicNumber" Title="Nr"/>
+    </Columns>
+</MudDataGrid> *@
+@code { 
+
+    private BrandReadModel Elements = new BrandReadModel();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Elements = await httpClient.GetFromJsonAsync<List<BrandReadModel>>("webapi/periodictable");
+
+        var queryProcessor = ApplicationResolver.Resolver.Resolve<IQueryProcessor>();
+
+        Elements = await queryProcessor.ProcessAsync(
+                new ReadModelByIdQuery<BrandReadModel>(BrandId.New),
+                CancellationToken.None)
+                .ConfigureAwait(false);
+    }
+}

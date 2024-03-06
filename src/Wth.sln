@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wth.Tests", "Wth.Tests\Wth.Tests.csproj", "{70B49906-682E-4F20-B0F0-955830731C37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wth.Tests", "Wth.Tests\Wth.Tests.csproj", "{70B49906-682E-4F20-B0F0-955830731C37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wth.Application", "Wth.Application\Wth.Application.csproj", "{4C42C39F-EB72-40B6-AE36-92D71009B129}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wth.Application", "Wth.Application\Wth.Application.csproj", "{4C42C39F-EB72-40B6-AE36-92D71009B129}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wth.Domain", "Wth.Domain\Wth.Domain.csproj", "{6083B48D-9040-4FD7-83E0-C72E3648366A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wth.Domain", "Wth.Domain\Wth.Domain.csproj", "{6083B48D-9040-4FD7-83E0-C72E3648366A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wth.Messages", "Wth.Messages\Wth.Messages.csproj", "{C80EB18D-AF9B-4EFF-B025-FF517582996A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wth.Messages", "Wth.Messages\Wth.Messages.csproj", "{C80EB18D-AF9B-4EFF-B025-FF517582996A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wth.ReadModel", "Wth.ReadModel\Wth.ReadModel.csproj", "{D81B0BBE-78DE-44B3-826D-2D3B593A8072}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wth.ReadModel", "Wth.ReadModel\Wth.ReadModel.csproj", "{D81B0BBE-78DE-44B3-826D-2D3B593A8072}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wth.Presentation", "Wth.Presentation\Wth.Presentation.csproj", "{9E6D7062-9AFB-40E4-BD4C-ECBC164F82CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{62918E72-689D-40D2-974F-F9A482909049}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9B8897E2-911C-4A05-A8D7-07D9FF4EFAEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +45,20 @@ Global
 		{D81B0BBE-78DE-44B3-826D-2D3B593A8072}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81B0BBE-78DE-44B3-826D-2D3B593A8072}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81B0BBE-78DE-44B3-826D-2D3B593A8072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E6D7062-9AFB-40E4-BD4C-ECBC164F82CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E6D7062-9AFB-40E4-BD4C-ECBC164F82CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E6D7062-9AFB-40E4-BD4C-ECBC164F82CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E6D7062-9AFB-40E4-BD4C-ECBC164F82CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C42C39F-EB72-40B6-AE36-92D71009B129} = {9B8897E2-911C-4A05-A8D7-07D9FF4EFAEE}
+		{6083B48D-9040-4FD7-83E0-C72E3648366A} = {9B8897E2-911C-4A05-A8D7-07D9FF4EFAEE}
+		{C80EB18D-AF9B-4EFF-B025-FF517582996A} = {9B8897E2-911C-4A05-A8D7-07D9FF4EFAEE}
+		{D81B0BBE-78DE-44B3-826D-2D3B593A8072} = {9B8897E2-911C-4A05-A8D7-07D9FF4EFAEE}
+		{9E6D7062-9AFB-40E4-BD4C-ECBC164F82CB} = {62918E72-689D-40D2-974F-F9A482909049}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89B25E3D-35AD-448D-B50D-3087FE706DC4}

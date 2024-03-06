@@ -1,6 +1,7 @@
 ﻿using EventFlow.Aggregates;
 using EventFlow.Aggregates.ExecutionResults;
 using EventFlow.Core;
+using Wth.Domain.Brands.Events;
 
 namespace Wth.Domain.Brands
 {

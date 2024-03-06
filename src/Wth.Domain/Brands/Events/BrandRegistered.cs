@@ -1,7 +1,7 @@
 ﻿using EventFlow.Aggregates;
 using EventFlow.EventStores;
 
-namespace Wth.Domain.Brands
+namespace Wth.Domain.Brands.Events
 {
     [EventVersion("example", 1)]
     public class BrandRegistered :

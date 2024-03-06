@@ -27,6 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Wth.Application\Wth.Application.csproj" />
     <ProjectReference Include="..\Wth.Domain\Wth.Domain.csproj" />
+    <ProjectReference Include="..\Wth.Presentation\Wth.Presentation.csproj" />
     <ProjectReference Include="..\Wth.ReadModel\Wth.ReadModel.csproj" />
   </ItemGroup>
 

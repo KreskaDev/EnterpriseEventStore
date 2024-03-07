@@ -2,6 +2,7 @@ using EventFlow;
 using EventFlow.Queries;
 using FluentAssertions;
 using Wth.Application.Brands.Commands;
+using Wth.Application.Brands.Queries;
 using Wth.Domain.Brands;
 using Wth.Presentation;
 using Wth.ReadModel;
@@ -29,12 +30,12 @@ namespace Wth.Tests
 
             var queryProcessor = resolver.Resolve<IQueryProcessor>();
             var exampleReadModel = await queryProcessor.ProcessAsync(
-                    new ReadModelByIdQuery<BrandListReadModel>(exampleId),
+                    new GetAllBrandsQuery(),
                     CancellationToken.None)
                 .ConfigureAwait(false);
 
-            exampleReadModel.Brands.Count.Should().Be(1);
-            exampleReadModel.Brands[0].MagicNumber.Should().Be(42);
+            exampleReadModel.Count.Should().Be(1);
+            exampleReadModel.ToArray()[0].MagicNumber.Should().Be(42);
         }
 
         [Fact]

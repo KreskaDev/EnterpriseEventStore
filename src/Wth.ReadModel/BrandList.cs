@@ -16,42 +16,4 @@ namespace Wth.ReadModel
             MagicNumber = domainEvent.AggregateEvent.MagicNumber;
         }
     }
-
-    //public class BrandListReadModelLocator : IReadModelLocator
-    //{
-    //    public IEnumerable<string> GetReadModelIds(IDomainEvent domainEvent)
-    //    {
-    //        var userNicknameAdded = domainEvent as
-    //            IDomainEvent<BrandAggregate, BrandId, BrandRegistered>;
-    //        if (userNicknameAdded == null)
-    //        {
-    //            yield break;
-    //        }
-
-    //        yield return userNicknameAdded.AggregateIdentity.ToString();
-    //    }
-    //}
-
-
-
-
-    
-
-    //public class BrandListReadModel :
-    //    IReadModel,
-    //    IAmReadModelFor<BrandAggregate, BrandId, BrandRegistered>
-    //{
-    //    public List<BrandItem> Brands { get; } = new();
-
-    //    public void Apply(
-    //        IReadModelContext context,
-    //        IDomainEvent<BrandAggregate, BrandId, BrandRegistered> domainEvent)
-    //    {
-    //        Brands.Add(new BrandItem
-    //        {
-    //            BrandId = domainEvent.AggregateIdentity,
-    //            MagicNumber = domainEvent.AggregateEvent.MagicNumber
-    //        });
-    //    }
-    //}
 }

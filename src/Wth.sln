@@ -13,11 +13,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wth.Messages", "Wth.Message
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wth.ReadModel", "Wth.ReadModel\Wth.ReadModel.csproj", "{D81B0BBE-78DE-44B3-826D-2D3B593A8072}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wth.Presentation", "Wth.Presentation\Wth.Presentation.csproj", "{9E6D7062-9AFB-40E4-BD4C-ECBC164F82CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wth.Presentation", "Wth.Presentation\Wth.Presentation.csproj", "{9E6D7062-9AFB-40E4-BD4C-ECBC164F82CB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{62918E72-689D-40D2-974F-F9A482909049}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9B8897E2-911C-4A05-A8D7-07D9FF4EFAEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstract", "Abstract", "{FE71FCF8-FC67-4803-8848-BF1CB66EDFA2}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

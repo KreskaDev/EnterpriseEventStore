@@ -1,16 +1,9 @@
 ﻿using EventFlow.Aggregates;
 using EventFlow.Aggregates.ExecutionResults;
-using EventFlow.Core;
 using Wth.Domain.Brands.Events;
 
 namespace Wth.Domain.Brands
 {
-    public class BrandId :
-        Identity<BrandId>
-    {
-        public BrandId(string value) : base(value) { }
-    }
-
     public class BrandAggregate :
         AggregateRoot<BrandAggregate, BrandId>,
         IEmit<BrandRegistered>

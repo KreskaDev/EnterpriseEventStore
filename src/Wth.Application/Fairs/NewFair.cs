@@ -4,10 +4,10 @@ using Wth.Domain.Fairs;
 
 namespace Wth.Application.Fairs
 {
-    public class NewFairs :
+    public class NewFair :
         Command<FairAggregate, FairId, IExecutionResult>
     {
-        public NewFairs(FairId aggregateId) : base(aggregateId)
+        public NewFair(FairId aggregateId) : base(aggregateId)
         {
         }
     }
